@@ -1,0 +1,84 @@
+---
+swagger: "2.0"
+info:
+  description: "A sample API that resolves path to field, given a JSON object and target field."
+  version: "0.0.1"
+  title: "JSON path resolver"
+  termsOfService: ""
+  contact:
+    name: "Daniel Arteaga"
+    url: "http://darteaga.com"
+    email: "dani8art.da@gmail.com"
+  license:
+    name: "MIT"
+    url: "http://opensource.org/licenses/MIT"
+basePath: "/api"
+schemes:
+- "http"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /resolve:
+    post:
+      tags:
+      - resolve
+      description: "Send your object with your target field and get the solution path to it."
+      operationId: "resolvesPath"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "requestObject"
+        description: "requestObject to resolve"
+        required: true
+        schema:
+          $ref: "#/definitions/requestObject"
+      responses:
+        200:
+          description: "Resolved path"
+          schema:
+            $ref: "#/definitions/responseObject"
+        default:
+          description: "unexpected error"
+          schema:
+            $ref: "#/definitions/errorModel"
+      x-swagger-router-controller: "Resolve"
+definitions:
+  requestObject:
+    type: "object"
+    required:
+    - "object"
+    - "target"
+    properties:
+      target:
+        type: "string"
+      object:
+        type: "object"
+        properties: {}
+  responseObject:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        format: "int64"
+      description:
+        type: "string"
+      path:
+        type: "string"
+      arrayPath:
+        type: "array"
+        items:
+          type: "string"
+  errorModel:
+    type: "object"
+    required:
+    - "code"
+    - "message"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"

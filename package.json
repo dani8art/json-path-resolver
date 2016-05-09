@@ -1,0 +1,19 @@
+{
+  "name": "js-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Arteaga (dani8art.da@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "algorithmia": "^0.3.3",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "js-yaml": "^3.3.0",
+    "request": "^2.72.0",
+    "swagger-tools": "0.9.*"
+  }
+}
