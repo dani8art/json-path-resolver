@@ -18,7 +18,7 @@ var app = express();
 
 app.use(bodyParser.json());
 
-var serverPort = 8080;
+var serverPort = (process.env.PORT || 8080);
 
 var options = {
   	swaggerUi: '/swagger.json',
