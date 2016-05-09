@@ -1,6 +1,6 @@
 #JSON Object Path Resolver
 
-A microservice to resolve path to a target filed, given a JSON Object. [API documentation](http://pathresolver.herokuapp.com/docs)
+A microservice to resolve path to a target filed, given a JSON Object. [API documentation](http://path-resolver.herokuapp.com/docs)
 
 
 ##INPUT
